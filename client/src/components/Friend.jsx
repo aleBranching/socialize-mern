@@ -53,7 +53,7 @@ const Friend = ({
 
   const patchFriend = async () => {
     const response = await fetch(
-      `${process.env.REACT_APP_SERVER_URL}/users/${_id}/${friendId}`,
+      `${process.env.REACT_APP_SERVER_URL}users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
