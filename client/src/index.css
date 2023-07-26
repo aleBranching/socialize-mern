@@ -8,3 +8,6 @@ body,
   width: 100%;
   font-family: "Rubik", sans-serif;
 }
+.test {
+  color: hsl(0, 0%, 98%);
+}

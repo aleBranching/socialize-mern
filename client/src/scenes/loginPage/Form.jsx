@@ -260,12 +260,15 @@ const Form = () => {
             <Button
               fullWidth
               type="submit"
+              // color="primary"
               sx={{
                 m: "2rem 0",
                 p: "1rem",
                 backgroundColor: palette.primary.main,
-                color: palette.background.alt,
-                "&:hover": { color: palette.primary.main },
+                color: palette.text.primary,
+
+                // color: palette.background.alt,
+                "&:hover": { backgroundColor: palette.primary.light },
               }}
             >
               {isLogin ? "LOGIN" : "REGISTER"}
@@ -281,9 +284,9 @@ const Form = () => {
                     m: "2rem 0",
                     p: "1rem",
                     backgroundColor: palette.primary.main,
-                    color: palette.background.alt,
+                    color: palette.text.primary,
                     fontSize: "1.2rem",
-                    "&:hover": { color: palette.primary.main },
+                    "&:hover": { backgroundColor: palette.primary.light },
                   }}
                   onClick={guestLogin}
                 >

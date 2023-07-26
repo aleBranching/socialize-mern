@@ -84,7 +84,7 @@ const Friend = ({
             fontWeight="500"
             sx={{
               "&:hover": {
-                color: palette.primary.light,
+                color: palette.primary.dark,
                 cursor: "pointer",
               },
             }}
@@ -100,11 +100,25 @@ const Friend = ({
       {isAllowedToPatch() && (
         <IconButton
           onClick={() => patchFriend()}
-          sx={{ backgroundColor: primaryLigth, p: "0.6rem" }}
+          sx={{
+            backgroundColor: primaryLigth,
+            p: "0.6rem",
+            color: primaryLigth,
+            "&:hover": {
+              backgroundColor: palette.primary.dark,
+              "& > .MuiSvgIcon-root": { color: primaryLigth },
+            },
+          }}
         >
           {isFriend ? (
             <PersonRemoveOutlined
-              sx={{ color: primaryDark }}
+              sx={{
+                color: primaryDark,
+                // "&:hover": {
+                //   backgroundColor: primaryDark,
+                //   color: primaryLigth,
+                // },
+              }}
             ></PersonRemoveOutlined>
           ) : (
             <PersonAddOutlined sx={{ color: primaryDark }}></PersonAddOutlined>

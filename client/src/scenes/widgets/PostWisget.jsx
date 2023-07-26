@@ -39,6 +39,7 @@ const PostWidget = ({
 
   const main = palette.neutral.main;
   const primary = palette.primary.main;
+  const accent = palette.accent.main;
 
   const patchLike = async () => {
     const response = await fetch(

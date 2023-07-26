@@ -68,7 +68,7 @@ const MyPostWidget = ({ picturePath }) => {
   return (
     <WidgetWrapper>
       <FlexBetween>
-        <UserImage image={picturePath} />
+        {/* {!isNonMobileScreens && <UserImage image={picturePath} />} */}
         <InputBase
           placeholder="What's on your mind..."
           onChange={(e) => setPost(e.target.value)}
@@ -141,35 +141,20 @@ const MyPostWidget = ({ picturePath }) => {
             Image
           </Typography>
         </FlexBetween>
-        {isNonMobileScreens ? (
-          <>
-            <FlexBetween gap="0.25rem">
-              <GifBoxOutlined sx={{ color: mediumMain }}></GifBoxOutlined>
-              <Typography color={mediumMain}>Clip</Typography>
-            </FlexBetween>
-            <FlexBetween gap="0.25rem">
-              <AttachFileOutlined
-                sx={{ color: mediumMain }}
-              ></AttachFileOutlined>
-              <Typography color={mediumMain}>Clip</Typography>
-            </FlexBetween>
-            <FlexBetween gap="0.25rem">
-              <MicOutlined sx={{ color: mediumMain }}></MicOutlined>
-              <Typography color={mediumMain}>Clip</Typography>
-            </FlexBetween>
-          </>
-        ) : (
-          <FlexBetween gap={"0.25rem"}>
-            <MoreHorizOutlined sx={{ color: mediumMain }}></MoreHorizOutlined>
-          </FlexBetween>
-        )}
+
         <Button
           disabled={!post}
           onClick={handlePost}
           sx={{
+            // color: palette.background.alt,
             color: palette.background.alt,
             backgroundColor: palette.primary.main,
             borderRadius: "3rem",
+            "&.Mui-disabled": {
+              color: palette.primary.dark,
+              backgroundColor: palette.primary.main,
+              borderRadius: "3rem",
+            },
           }}
         >
           POST

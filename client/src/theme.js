@@ -38,39 +38,44 @@ export const themeSettings = (mode) => {
         ? {
             // palette values for dark mode
             primary: {
-              dark: colorTokens.primary[200],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[800],
+              main: "#a1f44e",
             },
-            neutral: {
-              dark: colorTokens.grey[100],
-              main: colorTokens.grey[200],
-              mediumMain: colorTokens.grey[300],
-              medium: colorTokens.grey[400],
-              light: colorTokens.grey[700],
+            secondary: {
+              main: "#033030",
+            },
+            neutral: {},
+            accent: {
+              main: "#b26ff6",
             },
             background: {
-              default: colorTokens.grey[900],
-              alt: colorTokens.grey[800],
+              default: "#050505",
+              alt: "#3a3a3a",
+            },
+            text: {
+              primary: "#fafafa",
+              hint: "#474758",
             },
           }
         : {
             // palette values for light mode
             primary: {
-              dark: colorTokens.primary[700],
-              main: colorTokens.primary[500],
-              light: colorTokens.primary[50],
+              main: "#a1f44e",
             },
-            neutral: {
-              dark: colorTokens.grey[700],
-              main: colorTokens.grey[500],
-              mediumMain: colorTokens.grey[400],
-              medium: colorTokens.grey[300],
-              light: colorTokens.grey[50],
+            secondary: {
+              main: "#cffcfc",
             },
+            accent: {
+              main: "#7f0ff0",
+            },
+            neutral: {},
             background: {
-              default: colorTokens.grey[10],
-              alt: colorTokens.grey[0],
+              alt: "hsl(0, 0%, 98%)",
+              // default: "#f7f7f7",
+              default: "hsl(0, 0%, 98%)",
+            },
+            text: {
+              primary: "#010403",
+              hint: "#474758",
             },
           }),
     },

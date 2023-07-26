@@ -34,6 +34,7 @@ const FriendListWidget = ({ userId, otherProfile = false }) => {
   const primaryDark = palette.primary.dark;
   const main = palette.neutral.main;
   const medium = palette.neutral.medium;
+  const accent = palette.accent.main;
 
   return (
     <WidgetWrapper>

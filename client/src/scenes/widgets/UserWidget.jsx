@@ -60,6 +60,12 @@ const UserWidget = ({ userId, picturePath }) => {
         gap="0.5rem"
         pb="1.1rem"
         onClick={() => navigate(`/profile/${userId}`)}
+        sx={{
+          "&:hover": {
+            // color: primaryLight,
+            cursor: "pointer",
+          },
+        }}
       >
         {/* first row */}
         <FlexBetween gap="1rem">
@@ -104,10 +110,10 @@ const UserWidget = ({ userId, picturePath }) => {
         </Box>
       </FlexBetween>
       {/* </Box> */}
-      <Divider></Divider>
+      {/* <Divider></Divider> */}
 
       {/* third row */}
-      <Box p="1rem 0">
+      {/* <Box p="1rem 0">
         <FlexBetween mb="0.5rem">
           <Typography color="medium">Who's viewed your profile</Typography>
           <Typography color="medium" fontWeight="500">
@@ -120,12 +126,12 @@ const UserWidget = ({ userId, picturePath }) => {
             {impressions}
           </Typography>
         </FlexBetween>
-      </Box>
+      </Box> */}
 
       <Divider></Divider>
 
       {/* fourth row */}
-      <Box p="1rem 0">
+      {/* <Box p="1rem 0">
         <Typography fontSize="1rem" color="main" fontWeight="500" mb="1rem">
           Social Profiles
         </Typography>
@@ -155,7 +161,7 @@ const UserWidget = ({ userId, picturePath }) => {
           </FlexBetween>
           <EditOutlined sx={{ color: main }}></EditOutlined>
         </FlexBetween>
-      </Box>
+      </Box> */}
     </WidgetWrapper>
   );
 };
