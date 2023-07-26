@@ -14,6 +14,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
 import { useNavigate } from "react-router-dom";
+import CommentPost from "./CommentPost";
 // import PostsWidget from "./PostsWidget";
 
 const PostWidget = ({
@@ -110,15 +111,18 @@ const PostWidget = ({
       {isComments && (
         <Box mt="0.5rem">
           {comments.map((comment, index) => (
+            // <React.Fragment key={`${name}-${index}`}>
             <Box key={`${name}-${index}`}>
               <Divider></Divider>
               <Typography sx={{ color: main, m: "0.5rem 0", pl: "1rem" }}>
                 {comment}
               </Typography>
             </Box>
+            // </React.Fragment>
           ))}
 
           <Divider></Divider>
+          <CommentPost postId={postId}></CommentPost>
         </Box>
       )}
     </WidgetWrapper>
