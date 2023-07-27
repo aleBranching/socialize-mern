@@ -13,7 +13,11 @@ const HomePage = () => {
 
   const { _id, picturePath } = useSelector((state) => state.user);
 
+  const user = useSelector((state) => state.user);
   useEffect(() => {
+    console.log("the user:");
+    console.log(user);
+
     console.log("the unique key prop is a MUI library bug");
   });
   return (

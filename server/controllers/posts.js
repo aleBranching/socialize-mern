@@ -50,6 +50,20 @@ export const getUserPosts = async (req, res) => {
   }
 };
 
+export const postComment = async (req, res) => {
+  try {
+    const { userID, postID } = req.params;
+    const { comment } = req.body;
+
+    const post = await Post.findById(postID);
+    post.comments.push(comment.toString());
+    post.save();
+    res.status(201).json(post);
+  } catch (error) {
+    res.status(409).json({ message: error.message });
+  }
+};
+
 // UPDATE
 
 export const likePost = async (req, res) => {
