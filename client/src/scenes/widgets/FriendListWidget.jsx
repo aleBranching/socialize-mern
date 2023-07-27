@@ -27,7 +27,9 @@ const FriendListWidget = ({ userId, otherProfile = false }) => {
   };
 
   useEffect(() => {
+    console.log("THE FRIENDS");
     getFriends();
+    console.log(friends);
   }, []); //eslint-disable-line
 
   const primaryLigth = palette.primary.light;
@@ -47,18 +49,54 @@ const FriendListWidget = ({ userId, otherProfile = false }) => {
         Friends List
       </Typography>
       <Box display="flex" flexDirection="column" gap="1.5rem">
-        {friends.map((aFriend) => (
-          <Friend
-            key={aFriend._id}
-            friendId={aFriend._id}
-            name={`${aFriend.firstName} ${aFriend.lastName}`}
-            subtitle={aFriend.occupation}
-            userPicturePath={aFriend.picturePath}
-            otherProfile={otherProfile}
-          ></Friend>
-        ))}
+        {Array.isArray(friends) ? (
+          friends.map((aFriend) => (
+            <Friend
+              key={aFriend._id}
+              friendId={aFriend._id}
+              name={`${aFriend.firstName} ${aFriend.lastName}`}
+              subtitle={aFriend.occupation}
+              userPicturePath={aFriend.picturePath}
+              otherProfile={otherProfile}
+            ></Friend>
+          ))
+        ) : (
+          <Typography variant="h4">
+            {" "}
+            Error occured fetching friend list
+          </Typography>
+        )}
       </Box>
     </WidgetWrapper>
+    // <WidgetWrapper>
+    //   <Typography
+    //     color={palette.neutral.dark}
+    //     varian="h5"
+    //     fontWeight="500"
+    //     sx={{ mb: "1.5rem" }}
+    //   >
+    //     Friends List
+    //   </Typography>
+    //   <Box display="flex" flexDirection="column" gap="1.5rem">
+    //     {friends === Array ? (
+    //       friends.map((aFriend) => (
+    //         <Friend
+    //           key={aFriend._id}
+    //           friendId={aFriend._id}
+    //           name={`${aFriend.firstName} ${aFriend.lastName}`}
+    //           subtitle={aFriend.occupation}
+    //           userPicturePath={aFriend.picturePath}
+    //           otherProfile={otherProfile}
+    //         ></Friend>
+    //       ))
+    //     ) : (
+    //       <Typography variant="h4">
+    //         {" "}
+    //         Error occured fetching friend list
+    //       </Typography>
+    //     )}
+    //   </Box>
+    // </WidgetWrapper>
   );
 };
 

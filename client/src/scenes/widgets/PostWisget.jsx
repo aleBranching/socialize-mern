@@ -122,7 +122,11 @@ const PostWidget = ({
           ))}
 
           <Divider></Divider>
-          <CommentPost postId={postId}></CommentPost>
+          <CommentPost
+            style={{ width: "100%" }}
+            postId={postId}
+            loggedInUserId={loggedInUserId}
+          ></CommentPost>
         </Box>
       )}
     </WidgetWrapper>

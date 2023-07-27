@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setPosts } from "state";
@@ -46,32 +47,38 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   return (
     <>
-      {posts.map(
-        ({
-          comments,
-          _id,
-          userId,
-          firstName,
-          lastName,
-          location,
-          description,
-          picturePath,
-          userPicturePath,
-          likes,
-        }) => (
-          <PostWidget
-            key={_id}
-            comments={comments}
-            postId={_id}
-            userId={userId}
-            name={`${firstName} ${lastName}`}
-            location={location}
-            description={description}
-            picturePath={picturePath}
-            userPicturePath={userPicturePath}
-            likes={likes}
-          ></PostWidget>
+      {Array.isArray(posts) ? (
+        posts.map(
+          ({
+            comments,
+            _id,
+            userId,
+            firstName,
+            lastName,
+            location,
+            description,
+            picturePath,
+            userPicturePath,
+            likes,
+          }) => (
+            <PostWidget
+              key={_id}
+              comments={comments}
+              postId={_id}
+              userId={userId}
+              name={`${firstName} ${lastName}`}
+              location={location}
+              description={description}
+              picturePath={picturePath}
+              userPicturePath={userPicturePath}
+              likes={likes}
+            ></PostWidget>
+          )
         )
+      ) : (
+        <Typography sx={{ paddingTop: "2rem" }} align="center" variant="h3">
+          An error occured fetching posts
+        </Typography>
       )}
     </>
   );

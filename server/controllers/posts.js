@@ -52,6 +52,7 @@ export const getUserPosts = async (req, res) => {
 
 export const postComment = async (req, res) => {
   try {
+    // throw "fake error message";
     const { userID, postID } = req.params;
     const { comment } = req.body;
 
@@ -60,7 +61,7 @@ export const postComment = async (req, res) => {
     post.save();
     res.status(201).json(post);
   } catch (error) {
-    res.status(409).json({ message: error.message });
+    res.status(409).json({ message: error });
   }
 };
 
