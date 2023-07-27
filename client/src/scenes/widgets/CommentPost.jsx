@@ -48,7 +48,7 @@ const CommentPost = ({ postId, loggedInUserId }) => {
       }
       console.log(commentResponseJSON);
 
-      //   dispatch(setPost({ post: commentResponseJSON }));
+      dispatch(setPost({ post: commentResponseJSON }));
     } catch (e) {
       console.log(e);
       setErrorMessage(e.message);
